@@ -38,8 +38,7 @@
     </script>
     <script src="{{asset "built/infinitescroll.js"}}"></script>
     {{/if}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-    <script src="https://unpkg.com/just-handlebars-helpers@1.0.17/dist/h.min.js"></script>
+
     <script>
         $(document).ready(function () {
             // Mobile Menu Trigger
@@ -47,12 +46,6 @@
                 $('.aside').toggleClass('active');
                 $('.burger').toggleClass('active');
                 
-            });
-            Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
-                return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
-            });
-            Handlebars.registerHelper("logger", function(something) {
-                console.log(something);
             });
            
                 });

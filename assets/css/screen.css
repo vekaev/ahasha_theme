@@ -63,15 +63,14 @@ production stylesheet in assets/built/screen.css using: gulp dev
         grid-area: 1 / 2 / 3 / 3;
     }
 }
-.first-part .card:last-child{
-    margin-bottom: 0;
-}
+
 .card-list .top-rated{
     margin-bottom: 80px;
 }
 .card-list .top-rated .title-part{
     padding: 24px 0;
     margin-bottom: 12px;
+    border-bottom: 0.5px solid #DCDCDC;
 }
 .card-list .top-rated .title-part h2{
     font-style: normal;
@@ -91,9 +90,11 @@ html,
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #fff;
+    background: #FCFCFC;
 }
-
+body,main{
+    background: #FCFCFC;
+}
 .gh-main {
     flex: 1 0 auto;
     display: flex;
