@@ -2,24 +2,30 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="gh-card {{post_class}}">
-    <a class="gh-card-link" href="{{url}}">
+<article class="card">
+    <div class="text-part">
+        <div class="header-part">
+            <p>{{primary_tag.name}}</p>
+        </div>
+        <a class='title' href="{{url}}">
+            <h2>{{title}}</h2>
+        </a>
+        <div class="footer-part">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+            {{#if reading_time}}
+                <span class="bull">&bull;</span>
+                <p> {{reading_time}}</span>
+            {{/if}}
+        </div>
+    </div>
+    <div class="img-part">
+        <a href="{{url}}">
         {{#if feature_image}}
             <img class="gh-card-image"
-                srcset="{{img_url feature_image size="s"}} 300w,
-                        {{img_url feature_image size="m"}} 600w,
-                        {{img_url feature_image size="l"}} 1000w,
-                        {{img_url feature_image size="xl"}} 2000w"
-                sizes="(max-width: 1000px) 400px, 700px"
-                src="{{img_url feature_image size="m"}}"
+                src="{{img_url feature_image}}"
                 alt="{{title}}"
             />
         {{/if}}
-        <div class="gh-card-content">
-            <span class="gh-card-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-            <h2 class="gh-card-title">{{title}}</h2>
-            <p>{{excerpt}}</p>
-            <strong>Read more</strong>
-        </div>
     </a>
+    </div>    
 </article>

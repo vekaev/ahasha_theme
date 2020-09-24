@@ -1,60 +1,34 @@
-/* Error Templates
-/* ---------------------------------------------------------- */
-
-.gh-error {
-    flex: 1 0 auto;
+.error{
     display: flex;
+    height: 100%;
+    padding: 50px 20px;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 2vmin;
-}
-
-.gh-error-content {
-    flex: 1 0 auto;
+    align-items: center;
     text-align: center;
 }
+.error p, .error a{
+    font-family: Didot;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 68px;
+    /* identical to box height, or 113% */
 
-.gh-error-code {
-    margin: 0;
-    font-size: 14vmin;
+    text-align: center;
+
+    color: #000000;
+    margin-bottom: 16px;
 }
-
-.gh-error-description {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    font-size: 4vmin;
-    line-height: 1.2em;
-    font-weight: 300;
-    opacity: 0.6;
+.error span{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 50px;
 }
-
-.gh-error-link {
-    display: block;
-    margin-top: 4vmin;
-    font-size: 1.6rem;
-}
-
-.gh-error-stack {
-    max-width: 600px;
-    margin: 0 auto 0;
-    padding: 8vmin 0;
-    text-align: left;
-}
-
-.gh-error-stack-list {
-    margin: 4vmin 0 0;
-    font-size: 1.4rem;
-}
-
-.gh-error-stack-list > li {
-    padding: 2rem 0;
-    margin: 0;
-    border-top: rgba(0,0,0,0.1) 1px solid;
-}
-
-.gh-error-stack-function {
-    margin: 0 0 0.5em;
-    font-size: 1.8rem;
-    color: red;
+.error a{
+    font-size: 40px;
+    line-height: 48px;
 }

@@ -1,0 +1,10 @@
+<div class="title-part">
+        <h2>Popular on Ahasha</h2>
+    </div>
+    <ol style="padding-left: 35px;">  
+        {{#get "posts" limit="4" filter="tag:top" }}
+            {{#foreach posts}}
+                {{> "topCard"}} 
+            {{/foreach}}
+        {{/get}}
+</ol>

@@ -1,15 +1,25 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
+    <div class="card-list">
 
-        <div class="gh-postfeed">
-        {{#foreach posts visibility="all"}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
+        <div class="first-part">
+        {{#foreach posts from="1" to="6"}}
+            {{#has tag="fashion"}}
+                {{> "card"}}
+            {{/has}}
         {{/foreach}}
         </div>
 
+        <div class="top-rated">
+         {{> "topCardList"}}   
+        </div>
+         
+        <div class="second-part">
+            {{#foreach posts from="7" visibility="all"}}
+                {{#has tag="fashion"}}
+                    {{> "card"}}
+                {{/has}}
+            {{/foreach}}
+        </div>
+    
     </div>
-</div>

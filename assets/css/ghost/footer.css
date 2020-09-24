@@ -1,57 +1,128 @@
 /* Global Footer
 /* ---------------------------------------------------------- */
 
-.gh-foot {
+
+
+.footer{
+    background-color: var(--color-dark-bcg);
+    padding:90px 0;
+}
+
+.footer .content{
+    max-width: 840px!important;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+.footer .content .title label{
+    margin-right: 70px;
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 52px;
+    color: white;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+
+.footer .content form{
+    max-width: 360px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 8vmin 4vmin;
+    margin-bottom: 10px;
 }
 
-.gh-foot .gh-container {
-    width: auto;
+.footer .content form input{
+    width: 100%;
+    border:none;
+    outline: none;
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid var(--color-input-grey);
+    height: 40px;
+    margin-right: 16px;
+    transition: border-bottom .3s ease;
 }
 
-.gh-foot a {
-    color: inherit;
+.footer .content form input:focus, .footer .content form input:active {
+    border-bottom: 1px solid white;
 }
 
-.gh-foot-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer .content form input::placeholder{
+    color: var(--color-input-grey);
 }
 
-.gh-foot-menu .nav {
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    font-size: 1.8rem;
+.footer .content form button{
+    display: block;
+    min-width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: var(--color-red);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+.footer .content form button:active{
+    transform: scale(0.95);
 }
 
-.gh-foot-menu .nav li {
-    margin: 0 1.5vmin;
-    padding: 0;
-}
-
-.gh-foot-menu .nav a {
+.footer .content form button .icon{
     display: inline-block;
-    padding: 3px 0;
-    text-decoration: none;
-    box-shadow: 0 -1px 0 0 currentcolor inset;
+    min-width: 12px;
+    height: 10px;
+    mask: url('data:image/svg+xml,%3Csvg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.6158 5L0.359375 5" stroke="white"/%3E%3Cpath d="M6.51352 9.61553L11.1289 5.00015L6.51352 0.384766" stroke="white"/%3E%3C/svg%3E%0A') no-repeat center / contain;
+-webkit-mask: url('data:image/svg+xml,%3Csvg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.6158 5L0.359375 5" stroke="white"/%3E%3Cpath d="M6.51352 9.61553L11.1289 5.00015L6.51352 0.384766" stroke="white"/%3E%3C/svg%3E%0A') no-repeat center / contain;
+background-color: white;
 }
 
-.gh-foot-meta {
-    margin: 2rem 0;
-    font-size: 1.5rem;
-    text-align: center;
-    opacity: 0.5;
+@media (max-width: 1020px) {
+    .footer{
+        padding:80px 0;
+    }
+    .footer .content .title label{
+        font-size: 40px;
+        line-height: 47px;
+    }
 }
 
-@media (max-width: 700px) {
-    .gh-foot-menu .nav {
-        font-size: 1.6rem;
+@media (max-width: 768px) {
+    .footer .content .title label{
+        margin-right: 20px;
+    }
+}   
+
+@media (max-width: 520px) {
+    
+    .footer{
+        padding:60px 0;
+    }
+    .footer .content{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .footer .content .title{
+        max-width: 100%;
+        margin-right: 0;
+    }
+ 
+    .footer .content form{
+        max-width: 100%;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--color-input-grey);
+        transition: border-bottom .3s ease;
+    }
+    .footer .content .title label{
+        font-size: 32px;
+        line-height: 37px;
+        margin-bottom: 30px;
+    }
+    .footer .content form input, .footer .content form input:focus, .footer .content form input:active {
+        border-bottom: 0;
     }
 }

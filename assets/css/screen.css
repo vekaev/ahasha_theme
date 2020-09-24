@@ -13,20 +13,78 @@ production stylesheet in assets/built/screen.css using: gulp dev
 @import "components/global.css";
 @import "components/forms.css";
 @import "components/buttons.css";
-
 /* Ghost components */
 @import "ghost/header.css";
 @import "ghost/content.css";
 @import "ghost/readmore.css";
 @import "ghost/members.css";
 @import "ghost/errors.css";
+
 @import "ghost/footer.css";
 @import "ghost/badge.css";
-
+@import 'ghost/card.css';
 
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
+
+/* GLOBAL START*/
+
+
+*::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.content{
+    padding:  0 20px;
+    margin: 0 auto;
+    max-width: 1320px;
+    width: 100%;
+}
+/* GLOBAL END*/
+
+
+
+/* INDEX STYLE */
+@media (min-width: 768px) {
+    .card-list{
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+
+        grid-column-gap: 90px;
+    }
+    .card-list .first-part{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .card-list .second-part{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .card-list .top-rated{
+        grid-area: 1 / 2 / 3 / 3;
+    }
+}
+.first-part .card:last-child{
+    margin-bottom: 0;
+}
+.card-list .top-rated{
+    margin-bottom: 80px;
+}
+.card-list .top-rated .title-part{
+    padding: 24px 0;
+    margin-bottom: 12px;
+}
+.card-list .top-rated .title-part h2{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 22px;
+    color: black;
+}
+@media (max-width: 1020px) {
+    .card-list{
+        grid-column-gap: 40px;
+    }
+}
 
 html,
 .gh-viewport {
@@ -44,14 +102,6 @@ html,
 
 .gh-page {
     padding: 0 4vmin;
-}
-
-.gh-article {
-    padding: 8vmin 0;
-}
-
-.gh-postfeed {
-    padding: 8vmin 0;
 }
 
 .gh-container {

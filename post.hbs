@@ -2,9 +2,76 @@
 
 {{#post}}
 
-<article class="gh-article {{post_class}}">
+<article class="post-conent {{post_class}}">
 
-    <header class="gh-header gh-canvas">
+        <div class="intro-part">
+            <p class="tag">{{primary_tag.name}}</p>
+        
+            {{!-- {{logger title}} --}}
+            <h1>{{title}}</h1>
+            <div class="additional">
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                {{#if reading_time}}
+                    <span class="bull">&bull;</span>
+                    <p> {{reading_time}}</span>
+                {{/if}}
+            </div>
+        </div>
+        <section>
+            {{#if custom_excerpt}}
+                <p class="excerpt">{{custom_excerpt}}</p>
+                {{/if}}
+                {{#if feature_image}}
+                <div class="post-image">
+                    <img
+                        loading="lazy"
+                        src="{{img_url feature_image}}"
+                        alt="{{title}}"
+                    />
+                </div>
+            {{/if}}
+            {{content}}
+            <div class="share-part">
+                <p>SHARE</p>
+               <a class='facebook' href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F{{@site.url}}{{url}}" target="_blank"></a>
+               <a class='twitter' href="https://twitter.com/intent/tweet?url={{@site.url}}{{url}}" target="_blank"></a>
+               <a class='linkedin ' href="https://www.linkedin.com/sharing/share-offsite/?url={{@site.url}}{{url}}" target="_blank"></a>
+            </div>
+           </div>
+        </section>
+        {{!-- <aside class="gh-readmore">
+    <div class="gh-readmore-inner gh-container">
+        <div class="gh-readmore-next">
+            {{#next_post}}<a href="{{url}}">{{>"icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+        </div>
+        <div class="gh-readmore-prev">
+            {{#prev_post}}<a href="{{url}}">
+                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
+            </a>{{/prev_post}}
+        </div>
+    </div>
+</aside> --}}
+</article>
+
+
+
+{{/post}}
+
+{{!-- <aside class="gh-readmore">
+    <div class="gh-readmore-inner gh-container">
+        <div class="gh-readmore-next">
+            {{#next_post}}<a href="{{url}}">{{>"icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+        </div>
+        <div class="gh-readmore-prev">
+            {{#prev_post}}<a href="{{url}}">
+                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
+            </a>{{/prev_post}}
+        </div>
+    </div>
+</aside> --}}
+
+
+    {{!-- <header class="gh-header gh-canvas">
         <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
         <h1 class="gh-title">{{title}}</h1>
 
@@ -42,21 +109,5 @@
         </section>
         --}}
 
-    </footer>
+    </footer> 
 
-</article>
-
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
-        </div>
-        <div class="gh-readmore-prev">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
-        </div>
-    </div>
-</aside>
-
-{{/post}}

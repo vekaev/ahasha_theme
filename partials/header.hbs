@@ -1,0 +1,46 @@
+<header>
+    <div class="content">
+        <nav>
+            <ul>
+                <li class="logo">
+                     <a href="{{@site.url}}"></a>
+                </li>
+                <li class="navigation">{{navigation}}</li>
+                <li class="search">
+                    <form action="">
+                        <button type="submit"/></button>
+                        <input placeholder='search ahasha' required type="text">
+                    </form>
+                </li>
+                <li class="lang">
+                    <ul>
+                        <li>ru</li>   
+                        <li class="active">en</li>  
+                    </ul>
+                </li>
+                <li class="burger-wrapper">
+                    <div class='burger'>
+                        <span></span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="aside">
+    <div class="content">
+        <nav>
+            {{navigation}}
+        </nav>
+        <div class="additional">
+            <form action="">
+                <button type="submit"/></button>
+                <input placeholder='search ahasha' required type="text">
+            </form>
+            <ul class="lang">
+                <li >ru</li>   
+                <li class="active">en</li>  
+            </ul>
+        </div>
+        </div>
+    </div>  
+    </div>
+</header>
