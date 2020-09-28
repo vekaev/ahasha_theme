@@ -4,9 +4,7 @@
 
         <div class="first-part">
         {{#foreach posts from="1" to="6"}}
-            {{#has tag="fashion"}}
-                {{> "card"}}
-            {{/has}}
+            {{> "card"}}
         {{/foreach}}
         </div>
 
@@ -16,9 +14,7 @@
          
         <div class="second-part">
             {{#foreach posts from="7" visibility="all"}}
-                {{#has tag="fashion"}}
-                    {{> "card"}}
-                {{/has}}
+                {{> "card"}}
             {{/foreach}}
         </div>
     

@@ -6,7 +6,11 @@ Re-usable card for linking to posts
     <div class="text-part">
         <div class="header-part">
             {{!-- TODO:add primary tag check --}}
+            {{#if primary_tag.name}}
             <p>{{primary_tag.name}}</p>
+            {{else}}
+            <p>AHASHA BLOG</p>
+            {{/if}}
         </div>
         <a class='title' href="{{url}}">
             <h2>{{title}}</h2>

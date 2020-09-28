@@ -6,7 +6,12 @@
 
         <div class="intro-part">
              {{!-- TODO: add primary tag check --}}
-            <p class="tag">{{primary_tag.name}}</p>
+            {{#if primary_tag.name}}
+                <p class="tag">{{primary_tag.name}}</p>
+            {{else}}
+                <p class="tag">AHASHA BLOG</p>
+            {{/if}}
+            
         
             {{!-- {{logger title}} --}}
             <h1>{{title}}</h1>
@@ -38,26 +43,31 @@
                <a class='twitter' href="https://twitter.com/intent/tweet?url={{@site.url}}{{url}}" target="_blank"></a>
                <a class='linkedin ' href="https://www.linkedin.com/sharing/share-offsite/?url={{@site.url}}{{url}}" target="_blank"></a>
             </div>
+                {{> 'recomended'}}
            </div>
+
+            
+
+    
         </section>
         {{!-- TODO: add additional posts --}}
-        {{!-- <aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{>"icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
-        </div>
-        <div class="gh-readmore-prev">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
-        </div>
-    </div>
-</aside> --}}
+        
+
+
+
 </article>
 
 
 
 {{/post}}
+
+{{!-- {{#get “posts”  }}
+    {{#foreach posts}}
+    {{!— The tag below includes the markup for each post - partials/post-card.hbs —}}
+        <p>dcgf</p>
+    {{/foreach}}
+{{/get}} --}}
+
 
 {{!-- <aside class="gh-readmore">
     <div class="gh-readmore-inner gh-container">

@@ -1,5 +1,5 @@
 .card{
-    margin: 30px 0;
+    margin: 30px 0 60px;
     display: flex;
     max-height: min-content;
     justify-content: space-between;
@@ -88,7 +88,7 @@ color: var(--color-input-grey);
 
 @media (max-width: 520px) {
     .card{
-        margin: 20px 0;
+        margin: 20px 0 40px;
        flex-direction: column;
     }
     .card .img-part{
@@ -118,4 +118,8 @@ color: var(--color-input-grey);
     line-height: 24px;
     color: #000000;
     max-width: 90%;
+}
+
+.second-part .card:first-child{
+    margin-top: 0;
 }

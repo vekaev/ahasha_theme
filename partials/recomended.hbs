@@ -1,0 +1,38 @@
+{{!-- {{#get "posts" 
+        limit="2" 
+        visibility='all' 
+        filter="id:-{{post.id}}" as |recents|
+}}
+   
+    {{#foreach posts}}
+     {{!-- <script>console.log({{url}})</script> --}}
+        {{!-- {{> "topCard"}}  --}}
+    {{!-- {{/foreach}} --}}
+{{!-- {{/get}}  --}}
+
+            <h2 class="recomended-title">More from the ahasha</h2>
+            <div class="recomended">
+
+            {{#next_post}}
+            <a href="{{url}}">
+                 <img
+                    loading="lazy"
+                    src="{{img_url feature_image}}"
+                    alt="{{title}}"
+                />
+                <h3>{{title}}</h3>
+            </a>
+                
+                {{/next_post}}
+            {{#prev_post}}
+             <a href="{{url}}">
+                 <img
+                    loading="lazy"
+                    src="{{img_url feature_image}}"
+                    alt="{{title}}"
+                />
+                <h3>{{title}}</h3>
+            </a>
+                {{/prev_post}}
+            </div>
+         
