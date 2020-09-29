@@ -142,7 +142,11 @@ justify-content: space-between;
 header .content nav ul .lang ul li { 
     cursor: pointer;
 }
-header .content nav ul .lang ul li.active{
+header .content nav ul .lang ul li a{ 
+    color: var(--color-input-grey);
+    text-decoration: none;
+}
+header .content nav ul .lang ul li.active a{
     color: black;
 }
 @media (max-width: 1020px) {
@@ -291,13 +295,15 @@ text-decoration:none;
     justify-content: space-between;
 }
 
-.aside .content .lang li { 
+.aside .content .lang li a{ 
     cursor: pointer;
     font-weight: bold;
     font-size: 32px;
     line-height: 36px;
+    text-decoration: none;
+    color: var(--color-input-grey);
 }
-.aside .content .lang li.active{
+.aside .content .lang li.active a{
     color: black;
 }
 

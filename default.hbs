@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
-    <title>{{meta_title}}</title>
+    <title>{{meta_title}} {{lang}}</title>
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
@@ -15,23 +15,23 @@
     <div class="gh-viewport" style="padding-top: 80px;">
 
         {{> header}}
-
+    
         <main style="min-height: calc(100vh - 330px);">
-
             <div class="content"  >
                 {{{body}}}
             </div>
-
         </main>
 
         {{> footer}}
 
     </div>
+    
 
 {{!-- <footer> --}}
 
     <script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
 
+    
     {{#if pagination.pages}}
     <script>
         var maxPages = parseInt('{{pagination.pages}}');
@@ -47,12 +47,21 @@
                 $('.burger').toggleClass('active');
                 
             });
+            const href = window.location.href;
+
+            if (href.includes('/ru/')) {
+                $('.ru-lang').addClass('active');
+                $('.en-lang').removeClass('active');
+            } else {
+                $('.ru-lang').removeClass('active');
+                $('.en-lang').addClass('active');
+            }
         });
+
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
 
         window.addEventListener('resize', () => {
-
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         });

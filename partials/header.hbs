@@ -14,8 +14,8 @@
                 </li>
                 <li class="lang">
                     <ul>
-                        <li>ru</li>   
-                        <li class="active">en</li>  
+                        <li class="ru-lang"><a href="{{@site.url}}/ru/">ru</a></li>   
+                        <li class="en-lang active"><a href="{{@site.url}}/">en</a></li>  
                     </ul>
                 </li>
                 <li class="burger-wrapper">
@@ -29,15 +29,17 @@
     <div class="content">
         <nav>
             {{navigation}}
+
         </nav>
         <div class="additional">
             <form action="">
                 <button type="submit"/></button>
                 <input placeholder='search ahasha' required type="text">
             </form>
+            {{!-- class="{{#has @site.url="ru"}}active{{/has}}" --}}
             <ul class="lang">
-                <li >ru</li>   
-                <li class="active">en</li>  
+                <li class="ru-lang"><a href="{{@site.url}}/ru/">ru</a></li>   
+                <li class="en-lang active"><a href="{{@site.url}}/">en</a></li>  
             </ul>
         </div>
         </div>

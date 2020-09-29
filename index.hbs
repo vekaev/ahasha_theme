@@ -1,13 +1,14 @@
 {{!< default}}
 
+    {{!-- {{#contentFor "lang"}}{{@site.lang}}{{/contentFor}} --}}
     <div class="card-list">
 
         <div class="first-part">
         {{#foreach posts from="1" to="6"}}
             {{> "card"}}
         {{/foreach}}
-        </div>
-
+        </div> 
+        
         <div class="top-rated">
          {{> "topCardList"}}   
         </div>
