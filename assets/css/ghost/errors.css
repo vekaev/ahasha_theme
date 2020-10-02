@@ -1,13 +1,18 @@
 .error{
     display: flex;
     height: 100%;
-    padding: 50px 20px;
+    padding: 140px 20px 180px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.error p, .error a{
+@media (max-width: 520px){
+    .error {
+        padding: 50px 20px;
+    }
+}
+.error p{
     font-family: Didot;
     font-style: normal;
     font-weight: normal;
@@ -29,6 +34,22 @@
     margin-bottom: 50px;
 }
 .error a{
-    font-size: 40px;
-    line-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: black!important;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 50px;
+    max-height: 50px;
+
+    border: 1px solid #CACFD4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+
 }

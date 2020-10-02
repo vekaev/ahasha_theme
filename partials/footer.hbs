@@ -1,11 +1,4 @@
-<footer class="footer">
-    <div class="content">
-        <div class="title">
-           <label for="sub_email">Subscribe<br/>to Ahasha news</label>
-        </div>
-        <form>
-            <input type="email" id="sub_email" required name="email" placeholder="@example.com">
-            <button type="submit"><span class="icon"></span></button>
-        </form>
-    </div>
-</footer>
+<div class="multilang {{block "lang"}}">
+    {{> footer/footer-en}}
+    {{> footer/footer-ru}}
+</div>

@@ -2,7 +2,18 @@
 
 /* Content grid
 /* ---------------------------------------------------------- */
-
+.multilang.ru .recomended-title:first-child{
+    display: none;
+}
+.multilang.en .recomended-title:nth-child(2){
+    display: none;
+}
+.multilang.ru .share-text:first-child{
+    display: none;
+}
+.multilang.en .share-text:nth-child(2){
+    display: none;
+}
 
 .post-conent{
     max-width: 680px;
@@ -23,7 +34,7 @@
     letter-spacing: 0.12em;
     color: var(--color-input-grey);
     text-transform: uppercase;
-    
+
 }
 .post-conent .intro-part h1{
     margin: 50px 0;
@@ -73,8 +84,8 @@
     font-size: 18px;
     line-height: 28px;
    /* margin-bottom: 40px; */
-    
-    
+
+
     color: #000000;
 }
 .post-conent p{
@@ -148,7 +159,7 @@ border-radius: 0px 8px 8px 8px;
 }
 .post-conent .share-part .linkedin{
     mask: url('/assets/img/icon_linkedin.svg') no-repeat center / contain;
-    -webkit-mask: url('/assets/img/icon_linkedin.svg') no-repeat center / contain;    
+    -webkit-mask: url('/assets/img/icon_linkedin.svg') no-repeat center / contain;
 }
 
 
@@ -158,6 +169,8 @@ border-radius: 0px 8px 8px 8px;
     }
 }
 @media (max-width: 520px) {}
+
+
 
 .recomended-title{
     font-weight: bold;
@@ -198,7 +211,7 @@ border-radius: 0px 8px 8px 8px;
     font-size: 20px;
     line-height: 26px;
     /* or 130% */
-    
+
     letter-spacing: 1px;
 
     color: #000000;
@@ -206,12 +219,12 @@ border-radius: 0px 8px 8px 8px;
 @media (max-width: 768px) {
     .recomended{
         flex-direction: column;
-    
+
     }
     .recomended a{
         max-width: 100%;
         margin-right: 0!important;
-    } 
+    }
     .recomended a img{
         max-height: unset;
     }

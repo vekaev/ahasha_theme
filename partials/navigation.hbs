@@ -1,6 +1,6 @@
 <ul>
     <li class="{{link_class for=('/') class=(concat "nav-" slug)}}">
-    <a href="{{@site.url}}">{{t 'all'}}</a>
+    <a href="{{@site.url}}">All</a>
     </li>
     {{#foreach navigation}}
     <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{t label}}</a></li>

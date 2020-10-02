@@ -1,0 +1,31 @@
+{{!< default}}
+{{#contentFor "lang"}}ru{{/contentFor}}
+
+<div class="card-list">
+
+    <div class="first-part">
+        {{#foreach posts from="1" to="6"}}
+            {{> "card"}}
+        {{/foreach}}
+    </div>
+
+    <div class="top-rated">
+        <div class="title-part">
+            <h2>Популярно на Ahasha</h2>
+        </div>
+        <ol style="padding-left: 35px;">
+            {{#get "posts" limit="4" filter="tag:top" }}
+                {{#foreach posts}}
+                    {{> "topCard"}}
+                {{/foreach}}
+            {{/get}}
+        </ol>
+    </div>
+
+    <div class="second-part">
+        {{#foreach posts from="7" visibility="all"}}
+            {{> "card"}}
+        {{/foreach}}
+    </div>
+
+</div>

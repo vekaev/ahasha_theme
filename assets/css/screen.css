@@ -10,6 +10,7 @@ production stylesheet in assets/built/screen.css using: gulp dev
 
 /* Base components */
 @import "vars.css";
+
 @import "components/global.css";
 @import "components/forms.css";
 @import "components/buttons.css";
@@ -19,6 +20,7 @@ production stylesheet in assets/built/screen.css using: gulp dev
 @import "ghost/readmore.css";
 @import "ghost/members.css";
 @import "ghost/errors.css";
+@import "ghost/search.css";
 
 @import "ghost/footer.css";
 @import "ghost/badge.css";
@@ -84,6 +86,9 @@ production stylesheet in assets/built/screen.css using: gulp dev
         grid-column-gap: 40px;
     }
 }
+
+
+
 
 html,
 .gh-viewport {

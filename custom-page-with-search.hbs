@@ -1,0 +1,35 @@
+{{!< default}}
+
+<section class="post-full-content">
+    <div class="post-content">
+        {{content}}
+    </div>
+
+    <section role="search" data-ss360="true">
+        <input type="search" id="searchBox">
+        <button id="searchButton"></button>
+    </section>
+
+    <!-- Search results wrapper -->
+    <div id="search-results-wrapper"></div>
+
+    <script type="text/javascript">
+        /* Create a configuration object */
+        var ss360Config = {
+            /* Your site id */
+            siteId: "blog.ahasha.com",
+            /* A CSS selector that points to your search box */
+            searchBox: {
+                selector: '#searchBox'
+            },
+            /* A CSS selector that points to your search results */
+            results: {
+                embedConfig: {
+                    contentBlock: "#search-results-wrapper"
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.sitesearch360.com/v13/sitesearch360-v13.min.js" async></script>
+
+</section>

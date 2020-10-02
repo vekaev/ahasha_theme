@@ -1,63 +1,101 @@
 {{!< default}}
 
+
+
 {{#post}}
 
-<article class="post-conent {{post_class}}">
 
-        <div class="intro-part">
-             {{!-- TODO: add primary tag check --}}
-            {{#if primary_tag.name}}
-                <p class="tag">{{primary_tag.name}}</p>
-            {{else}}
-                <p class="tag">AHASHA BLOG</p>
-            {{/if}}
-            
-        
-            {{!-- {{logger title}} --}}
-            <h1>{{title}}</h1>
-            <div class="additional">
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                {{#if reading_time}}
-                    <span class="bull">&bull;</span>
-                    <p> {{reading_time}}</span>
-                {{/if}}
-            </div>
-        </div>
-        <section>
-            {{#if custom_excerpt}}
-                <p class="excerpt">{{custom_excerpt}}</p>
-                {{/if}}
-                {{#if feature_image}}
-                <div class="post-image">
-                    <img
-                        loading="lazy"
-                        src="{{img_url feature_image}}"
-                        alt="{{title}}"
-                    />
+
+            <article class="post-conent {{post_class}}">
+
+                <div class="intro-part">
+                    {{!-- TODO: add primary tag check --}}
+                    {{#if primary_tag.name}}
+                        <p class="tag">{{primary_tag.name}}</p>
+                    {{else}}
+                        <p class="tag">AHASHA BLOG</p>
+                    {{/if}}
+
+
+                    {{!-- {{logger title}} --}}
+                    <h1>{{title}}</h1>
+                    <div class="additional">
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                        {{#if reading_time}}
+                            <span class="bull">&bull;</span>
+                        <p> {{reading_time}} </p> </span>
+                        {{/if}}
+                    </div>
                 </div>
-            {{/if}}
-            {{content}}
-            <div class="share-part">
-                <p>SHARE</p>
-               <a class='facebook' href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F{{@site.url}}{{url}}" target="_blank"></a>
-               <a class='twitter' href="https://twitter.com/intent/tweet?url={{@site.url}}{{url}}" target="_blank"></a>
-               <a class='linkedin ' href="https://www.linkedin.com/sharing/share-offsite/?url={{@site.url}}{{url}}" target="_blank"></a>
-            </div>
-                {{> 'recomended'}}
-           </div>
+                <section>
+                    {{#if custom_excerpt}}
+                        <p class="excerpt">{{custom_excerpt}}</p>
+                    {{/if}}
+                    {{#if feature_image}}
+                        <div class="post-image">
+                            <img
+                                    loading="lazy"
+                                    src="{{img_url feature_image}}"
+                                    alt="{{title}}"
+                            />
+                        </div>
+                    {{/if}}
+                    {{content}}
+                    <div class="share-part">
+                        <div class="multilang {{block "lang"}}">
+                            <p class="share-text">SHARE</p>
+                            <p class="share-text">ПОДЕЛИТЬСЯ</p>
+                        </div>
+                        <a class='facebook' href="https://www.facebook.com/sharer/sharer.php?u={{@site.url}}{{url}}" target="_blank" ></a>
+                        <a class='twitter' href="https://twitter.com/intent/tweet?url={{@site.url}}{{url}}" target="_blank"></a>
+                        <a class='linkedin ' href="https://www.linkedin.com/sharing/share-offsite/?url={{@site.url}}{{url}}" target="_blank"></a>
+                    </div>
+                    <div class="multilang {{block "lang"}}">
+                        <h2 class="recomended-title">
+                            More from the ahasha
+                        </h2>
+                        <h2 class="recomended-title">
+                            Еще больше на Ahasha
+                        </h2>
+                    </div>
+                    <div class="recomended">
 
-            
+                        {{#next_post}}
+                            <a href="{{url}}">
+                                <img
+                                        loading="lazy"
+                                        src="{{img_url feature_image}}"
+                                        alt="{{title}}"
+                                />
+                                <h3>{{title}}</h3>
+                            </a>
 
-    
-        </section>
-        {{!-- TODO: add additional posts --}}
-        
+                        {{/next_post}}
+                        {{#prev_post}}
+                            <a href="{{url}}">
+                                <img
+                                        loading="lazy"
+                                        src="{{img_url feature_image}}"
+                                        alt="{{title}}"
+                                />
+                                <h3>{{title}}</h3>
+                            </a>
+                        {{/prev_post}}
+                    </div>
+
+
+                    </div>
 
 
 
-</article>
+
+                </section>
+                {{!-- TODO: add additional posts --}}
 
 
+
+
+            </article>
 
 {{/post}}
 {{!-- {{#post}}
@@ -128,5 +166,5 @@
         </section>
         --}}
 
-    </footer> 
+    </footer>
 

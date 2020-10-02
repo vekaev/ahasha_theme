@@ -1,0 +1,10 @@
+#sge-close:hover, .search-btn:hover {
+    fill: red!important;
+}
+.sge-container{
+    top: 84px;
+}
+.searchbar-wrapper{
+    max-width: 1320px;
+    padding: 0 20px;
+}

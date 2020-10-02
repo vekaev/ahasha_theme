@@ -1,0 +1,61 @@
+<header>
+    <div class="content">
+        <nav>
+            <ul>
+                <li class="logo">
+                    <a href="{{@site.url}}/ru"></a>
+                </li>
+                <li class="navigation">
+                    <ul>
+                        <li class="{{link_class for=('/') class=(concat "nav-" slug)}} nav-current">
+                            <a href="{{@site.url}}/ru">Главная</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="search">
+                    <section class="form" role="search" data-ss360="true">
+                        <a class="button" href="#searchinghost-easy"></a>
+<!--                        <input placeholder='search ahasha' required type="search" id="searchBox">-->
+                    </section>
+                </li>
+                <li class="lang">
+                    <ul>
+                        <li onclick="saveToLocalStorage(this)" name="ru" class="ru-lang active"><a rel="alternate" hreflang="ru" href="{{@site.url}}/ru/">ru</a></li>
+                        <li onclick="saveToLocalStorage(this)" name="en" class="en-lang "><a href="{{@site.url}}/">en</a></li>
+                    </ul>
+                </li>
+                <li class="burger-wrapper">
+                    <div class='burger'>
+                        <span></span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="aside">
+            <div class="content">
+                <nav>
+
+                    <ul>
+                        <li class="{{link_class for=('/') class=(concat "nav-" slug)}} nav-current">
+                            <a href="{{@site.url}}/ru">Главная</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <div class="additional">
+                    <section class="form" role="search" data-ss360="true">
+                        <a class="button" href="#searchinghost-easy"></a>
+<!--                        <input  placeholder='search ahasha' required type="search" id="searchBox">-->
+                    </section>
+                    {{!-- class="{{#has @site.url="ru"}}active{{/has}}" --}}
+                    <ul class="lang">
+                        <li onclick="saveToLocalStorage(this)" name="ru"  class="ru-lang"><a href="{{@site.url}}/ru/">ru</a></li>
+                        <li onclick="saveToLocalStorage(this)" name="en" class="en-lang active"><a href="{{@site.url}}/">en</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

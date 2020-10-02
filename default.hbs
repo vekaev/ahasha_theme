@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.lang}}">
+<html lang="{{{block "lang"}}}">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,31 +7,36 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
-    <title>{{meta_title}} {{lang}}</title>
+    <title>{{meta_title}} {{{block "lang"}}}</title>
     {{ghost_head}}
 </head>
+
 <body class="{{body_class}}">
 
     <div class="gh-viewport" style="padding-top: 80px;">
 
         {{> header}}
-    
+
         <main style="min-height: calc(100vh - 330px);">
             <div class="content"  >
+
                 {{{body}}}
             </div>
         </main>
 
+        {{{block "footer-area"}}}
+
         {{> footer}}
 
     </div>
-    
+
 
 {{!-- <footer> --}}
 
     <script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
 
-    
+
+
     {{#if pagination.pages}}
     <script>
         var maxPages = parseInt('{{pagination.pages}}');
@@ -45,16 +50,22 @@
             $('.burger-wrapper').click(function () {
                 $('.aside').toggleClass('active');
                 $('.burger').toggleClass('active');
-                
+
             });
             const href = window.location.href;
 
             if (href.includes('/ru/')) {
                 $('.ru-lang').addClass('active');
                 $('.en-lang').removeClass('active');
+                $('.multilang').addClass('ru');
+                $('.multilang').removeClass('en');
+
             } else {
                 $('.ru-lang').removeClass('active');
                 $('.en-lang').addClass('active');
+
+                $('.multilang').addClass('en');
+                $('.multilang').removeClass('ru');
             }
         });
 
@@ -65,8 +76,19 @@
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         });
-
     </script>
+
+<!--    SEARCH BAR-->
+    <script src="https://cdn.jsdelivr.net/gh/gmfmi/searchinghost-easy@latest/dist/searchinghost-easy-backpack.js"></script>
+    <script>
+        new SearchinGhostEasy({
+            contentApiKey: 'f001973c4fda47121c71c74849',
+            placeholder: 'Search Ahasha',
+            debug: true
+        });
+    </script>
+<!--    SEARCH BAR-->
+
 
 {{#is "post, page"}}
 <script src="{{asset "built/jquery.fitvids.js"}}"></script>
@@ -83,13 +105,12 @@ $(document).ready(function () {
     var $postContent = $(".gh-content");
     $postContent.fitVids();
 });
-
-
 </script>
 
 {{/is}}
 
 {{ghost_foot}}
+    <script type="text/javascript" src="{{asset "js/app.js"}}"></script>
 {{!-- Outputs important scripts - should always be included before closing body tag --}}
 
 </body>

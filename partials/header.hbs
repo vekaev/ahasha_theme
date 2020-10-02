@@ -1,48 +1,10 @@
-<header>
-    <div class="content">
-        <nav>
-            <ul>
-                <li class="logo">
-                     <a href="{{@site.url}}"></a>
-                </li>
-                <li class="navigation">{{navigation}}</li>
-                <li class="search">
-                    <form action="">
-                        <button type="submit"/></button>
-                        <input placeholder='search ahasha' required type="text">
-                    </form>
-                </li>
-                <li class="lang">
-                    <ul>
-                        <li class="ru-lang"><a href="{{@site.url}}/ru/">ru</a></li>   
-                        <li class="en-lang active"><a href="{{@site.url}}/">en</a></li>  
-                    </ul>
-                </li>
-                <li class="burger-wrapper">
-                    <div class='burger'>
-                        <span></span>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div class="aside">
-    <div class="content">
-        <nav>
-            {{navigation}}
+<div class="multilang {{block "lang"}}">
+    {{> header/header-en}}
+    {{> header/header-ru}}
+</div>
 
-        </nav>
-        <div class="additional">
-            <form action="">
-                <button type="submit"/></button>
-                <input placeholder='search ahasha' required type="text">
-            </form>
-            {{!-- class="{{#has @site.url="ru"}}active{{/has}}" --}}
-            <ul class="lang">
-                <li class="ru-lang"><a href="{{@site.url}}/ru/">ru</a></li>   
-                <li class="en-lang active"><a href="{{@site.url}}/">en</a></li>  
-            </ul>
-        </div>
-        </div>
-    </div>  
-    </div>
-</header>
+<script>
+function saveToLocalStorage(e){
+    //TODO:SAVE TO LOCALSTORAGE LANGUAGE
+}
+</script>
